@@ -31,8 +31,19 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
     function sumNumsFor(nums) {
-
+      let sum = 0;
+      if ( !nums[0] ) {
+        return 0;
+      } 
+      for ( let num in nums  ) {
+        if ( nums[num] === 13 ) {
+        return 'I\'m too superstitious!';
+      } else if ( typeof nums[num] === 'number' ) {
+        sum += nums[num];
+      }
     }
+    return sum;
+  }
 
     // 👉 CHALLENGE 2
     // 🧠 The function stripVowels takes a string, strips all lowcase vowel letters (a,e,i,o,u) from it and returns it.
@@ -41,14 +52,32 @@
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
-
-    }
+      let newStr = '';
+      let lowercaseVowels = [ 'a', 'e', 'i', 'o', 'u']
+      for  ( let i = 0 ; i < str.length ; i++ ) {
+        if ( !lowercaseVowels.includes(str[i])  ) {
+          newStr += str[i];
+        }
+      }
+      return newStr
+    } 
+      
+      
+    
 
     // 👉 CHALLENGE 3
     // 🧠 Reimplement sumNumsFor using a while loop instead of a for loop.
     // 🧠 Examples of usage:
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
+
+    // 🧠 The function sumNumsFor takes an array of supposed numbers and adds them up, returning the total sum.
+    // 🧠 If the function receives an empty array, the returned value ought to be 0.
+    // 🧠 If an element in the array happens to not be a number, it is ignored.
+    // 🧠 However, if the number 13 is encountered, sumNumsFor returns the string "I'm too superstitious!"
+    // 🧠 Examples of usage:
+    // sumNumsFor([1, 2, 3]) // should return 6
+    // sumNumsFor([1, 2, 13]) // should return "I'm too superstitious!"
     function sumNumsWhile() {
 
     }
