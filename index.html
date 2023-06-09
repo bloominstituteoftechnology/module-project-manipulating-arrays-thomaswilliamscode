@@ -78,9 +78,22 @@
     // 🧠 Examples of usage:
     // sumNumsFor([1, 2, 3]) // should return 6
     // sumNumsFor([1, 2, 13]) // should return "I'm too superstitious!"
-    function sumNumsWhile() {
-
-    }
+    function sumNumsWhile( arr ) {
+      let index = 0;
+      let sum = 0;
+      if ( !arr[0] === true ) {
+        return 0;
+      } else while ( index < arr.length ) {
+        if ( arr[index] === 13 ) {
+        return "I'm too superstitious!";
+      } else if ( typeof arr[index] === 'number' ) {
+        sum += arr[index];
+        index++;
+      } else {
+        index++;
+      }
+    } return sum;
+  }
 
     // 👉 CHALLENGE 4
     // 🧠 The function fightMonsters takes an integer (lifePoints) as its argument, and returns a string.
